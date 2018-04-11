@@ -36,6 +36,16 @@ $(function() {
            var hasClassHidden = $("body").hasClass("menu-hidden"); 
             expect(hasClassHidden).toBe(true);
         });
+        
+            /*Check if the menu is toggled when click happens on the icon. At the first click the class menu-hidden is removed, showing the menu, while at the second click the class menu-hidden is added*/
+        it("should toggle class menu-hidden when clicked", function() {
+            var icon = document.querySelector(".menu-icon-link");
+            var event = new Event("click");
+            icon.dispatchEvent(event); //first click
+             expect($("body").hasClass("menu-hidden")).toBe(false); //first expectation, class removed
+            icon.dispatchEvent(event); //second click
+            expect($("body").hasClass("menu-hidden")).toBe(true); //second expectation, class added
+        });
 
 
     
