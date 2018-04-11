@@ -46,6 +46,26 @@ $(function() {
             icon.dispatchEvent(event); //second click
             expect($("body").hasClass("menu-hidden")).toBe(true); //second expectation, class added
         });
+        
+    });
+    
+    
+        
+    /* New test suite for the entries loaded */
+    describe("Initial Entries", function() {
+        
+        //the async loadFeed function is called inside the beforeEach function
+        beforeEach(function(done) {
+         loadFeed(0, done);
+        });
+        
+        
+        /*after the feeds have been loaded by the async API, the div with class .feed, should have at least one entry inside it*/
+        it("there should be at least one entry", function(done) {
+            expect($(".feed").children().length).toBeGreaterThan(0); 
+            done();
+        });
+    });
 
 
     
