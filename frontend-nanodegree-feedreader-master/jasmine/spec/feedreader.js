@@ -66,7 +66,28 @@ $(function() {
             done();
         });
     });
-
-
     
+      /* New test suite named "New Feed Selection" */
+    describe("New Feed Selection", function() {
+        
+        var content;
+        var content2; 
+        beforeEach(function(done) {
+            //load the first feed, with id 0, hold the innerHtml of the container in a variable, this is async
+            loadFeed(0, function() {
+                content = $(".feed").html();
+                //load the the second feed, with id 1, hold the innerHtml of the container in a variable, this is async
+                loadFeed(1, function() {
+                    content2 = $(".feed").html();
+                    done();
+                }); 
+            }); 
+        });
+        
+        /*This test depends on the async execution, when the async function is done, perform this test*/
+        it("should change the content displayed", function(done) {
+            expect(content).not.toEqual(content2); //check  if the two contents are not equal
+            done();
+        });
+    });
 }());
