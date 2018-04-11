@@ -26,10 +26,16 @@ $(function() {
                 expect(nameOfFeed.length).not.toBe(0);
             }
          });
-
-
-        
     });
+    
+      /* New test suite for the menu*/
+    describe("The menu", function() {
+        
+          /*Make sure that the menu is hidden by default*/
+        it("should be hidden by default", function() {
+           var hasClassHidden = $("body").hasClass("menu-hidden"); 
+            expect(hasClassHidden).toBe(true);
+        });
 
 
     
