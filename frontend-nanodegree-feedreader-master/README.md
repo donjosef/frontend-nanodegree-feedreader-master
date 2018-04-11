@@ -24,4 +24,4 @@ I have worked primarily on the feedreader.js. The tests implemented are:
 
 ## Run the application
 
-Open index.html file inside your browser to see all the feeds loaded and displayed. If you scroll all the way down you'll see a section relative to Jasmine Framework and the  results of the various tests passed.
+Go to [ https://donjosef.github.io/frontend-nanodegree-feedreader-master/ ] to see all the feeds loaded and displayed. If you scroll all the way down you'll see a section relative to Jasmine Framework and the  results of the various tests passed.
