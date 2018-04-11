@@ -17,6 +17,15 @@ $(function() {
             }
             
         }); 
+        
+          /*Check if feed has a name and it is not empty*/
+         it("should have a defined name", function() {
+            for(var feed of allFeeds) {
+                let nameOfFeed = feed.name;
+                expect(nameOfFeed).toBeDefined();
+                expect(nameOfFeed.length).not.toBe(0);
+            }
+         });
 
 
         
